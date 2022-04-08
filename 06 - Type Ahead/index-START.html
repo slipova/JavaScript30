@@ -35,7 +35,8 @@ const findMatches = (wordToMatch, cities) => {
 };
 
 function displayMatches() {
-  console.log(this.value)
+  const findArray = findMatches(this.value, cities);
+  console.log(findArray)
 }
 
 const searchInput = document.querySelector('.search');
@@ -43,6 +44,8 @@ const suggestions = document.querySelector('.suggestions');
 
 searchInput.addEventListener('change', displayMatches)
 searchInput.addEventListener('keyup', displayMatches)
+
+
 
 </script>
 </body>
