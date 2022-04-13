@@ -16,15 +16,17 @@
   ctx.strokeStyle = 'red';
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
+  ctx.lineWidth = 50;
 
   let isDrawing = false;
 
   let lastX = 0;
   let lastY = 0;
+  let hue = 0;
 
   function draw(e) {
     if (!isDrawing) return;
-
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     // begin path
     ctx.beginPath();
     //where to move to start
@@ -36,6 +38,7 @@
 
     //restate the values for lastX and Y??
     [lastX, lastY] = [e.offsetX, e.offsetY]
+    hue++;
   };
 
   canvas.addEventListener('mousedown', (e) => {
