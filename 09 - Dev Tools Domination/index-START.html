@@ -18,28 +18,66 @@
     }
 
     // Regular
-
+    console.log('THIS IS A PRACTICE');
+    
     // Interpolated
+    console.log('This is an inserted element: %s. We will see if it worked', 'ELEMENT');
 
     // Styled
+    console.log('%cThis is a styled message!', 'font-size: 20px; text-shadow: 10px 6px 2px green;');
 
     // warning!
+    console.warn('This is a warning!');
 
     // Error :|
+    console.error('Oops! That\'s a botched job...');
 
     // Info
+    console.info('For more information, consult MDN.');
 
     // Testing
+    console.assert(1 === 6, 'WRONG ANSWER!');
+
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('blueberry'), 'Paragraph contains no blueberries!');
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    console.group('paragraphs');
+    console.log('All work and no play makes Jack a dull boy.');
+    console.log('All work and no play makes Jack a dull boy.');
+    console.log('All work and no play makes Jack a dull boy.');
+    console.groupEnd('paragraphs');
 
     // counting
+    console.count('Jack');
+    console.count('Linda');
+    console.count('Jack');
+    console.count('Jack');
+    console.count('Linda');
+    console.count('Jack');
+    console.count('Jack');
+    console.count('Linda');
+    console.count('Linda');
+    console.count('Jack');
+    console.count('Linda');
 
     // timing
+    console.time('fetching data')
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+    
 
   </script>
 </body>
